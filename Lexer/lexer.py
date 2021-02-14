@@ -33,7 +33,11 @@ class Lexer:
 
             elif self.current_char == '*':
                 self.advance()
-                yield Token(TokenType.MULTIPLY)
+                if self.current_char == '*':
+                    self.advance()
+                    yield Token(TokenType.POW)
+                else:
+                    yield Token(TokenType.MULTIPLY)
 
             elif self.current_char == '/':
                 self.advance()
@@ -51,9 +55,18 @@ class Lexer:
                 self.advance()
                 yield Token(TokenType.MOD)
 
-            elif self.current_char == '^':
+            elif self.current_char == '#':
                 self.advance()
-                yield Token(TokenType.POW)
+                yield Token(TokenType.SQRT)
+
+            elif self.current_char == 'L':
+                char = self.current_char
+                self.advance()
+                if self.current_char == "B":
+                    self.advance()
+                    yield Token(TokenType.LOGNBASEX)
+                else:
+                    raise Exception(f"Illegal Character '{char}'")
 
             elif self.current_char == '(':
                 self.advance()

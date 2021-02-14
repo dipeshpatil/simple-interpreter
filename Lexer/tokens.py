@@ -11,8 +11,10 @@ class TokenType(Enum):
     INT_DIVIDE = 5
     MOD = 6
     POW = 7
-    LPAREN = 8
-    RPAREN = 9
+    SQRT = 8
+    LOGNBASEX = 9
+    LPAREN = 10
+    RPAREN = 11
 
 
 @dataclass

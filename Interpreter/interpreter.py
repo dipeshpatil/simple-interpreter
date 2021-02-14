@@ -1,4 +1,5 @@
 from Interpreter.values import Number
+from Interpreter.calculator import *
 
 
 class Interpreter:
@@ -7,7 +8,8 @@ class Interpreter:
         method = getattr(self, method_name)
         return method(node)
 
-    def visit_NumberNode(self, node):
+    @staticmethod
+    def visit_NumberNode(node):
         return Number(node.value)
 
     def visit_AddNode(self, node):
@@ -36,6 +38,12 @@ class Interpreter:
 
     def visit_PowNode(self, node):
         return Number(self.visit(node.node_a).value ** self.visit(node.node_b).value)
+
+    def visit_NRTNode(self, node):
+        return Number(self.visit(node.node_a).value ** (1 / self.visit(node.node_b).value))
+
+    def visit_LogNBaseXNode(self, node):
+        return Number(logBaseX(self.visit(node.node_a).value, self.visit(node.node_b).value))
 
     def visit_PlusNode(self, node):
         return self.visit(node.node)
