@@ -103,4 +103,8 @@ class Parser:
             self.advance()
             return MinusNode(self.factor())
 
+        elif token.type == TokenType.NAT_LOG:
+            self.advance()
+            return NatLogNode(self.factor())
+
         self.raise_error()

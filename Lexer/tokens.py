@@ -13,8 +13,9 @@ class TokenType(Enum):
     POW = 7
     SQRT = 8
     LOGNBASEX = 9
-    LPAREN = 10
-    RPAREN = 11
+    NAT_LOG = 10
+    LPAREN = 11
+    RPAREN = 12
 
 
 @dataclass

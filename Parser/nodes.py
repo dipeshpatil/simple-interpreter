@@ -71,6 +71,7 @@ class PowNode:
     def __repr__(self):
         return f"({self.node_a} ** {self.node_b})"
 
+
 @dataclass
 class NRTNode:
     node_a: any
@@ -79,6 +80,7 @@ class NRTNode:
     def __repr__(self):
         return f"({self.node_a} # {self.node_b})"
 
+
 @dataclass
 class LogNBaseXNode:
     node_a: any
@@ -86,6 +88,7 @@ class LogNBaseXNode:
 
     def __repr__(self):
         return f"({self.node_a} LB {self.node_b})"
+
 
 @dataclass
 class PlusNode:
@@ -101,3 +104,11 @@ class MinusNode:
 
     def __repr__(self):
         return f"(-{self.node})"
+
+
+@dataclass
+class NatLogNode:
+    node: any
+
+    def __repr__(self):
+        return f"(LN{self.node})"

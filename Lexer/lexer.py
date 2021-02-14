@@ -59,12 +59,24 @@ class Lexer:
                 self.advance()
                 yield Token(TokenType.SQRT)
 
+            # elif self.current_char == 'N':
+            #     char = self.current_char
+            #     self.advance()
+            #     if self.current_char == "l":
+            #         self.advance()
+            #         yield Token(TokenType.NAT_LOG)
+            #     else:
+            #         raise Exception(f"Illegal Character '{char}'")
+
             elif self.current_char == 'L':
                 char = self.current_char
                 self.advance()
                 if self.current_char == "B":
                     self.advance()
                     yield Token(TokenType.LOGNBASEX)
+                elif self.current_char == "N":
+                    self.advance()
+                    yield Token(TokenType.NAT_LOG)
                 else:
                     raise Exception(f"Illegal Character '{char}'")
 

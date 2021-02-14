@@ -50,3 +50,6 @@ class Interpreter:
 
     def visit_MinusNode(self, node):
         return Number(-self.visit(node.node).value)
+
+    def visit_NatLogNode(self, node):
+        return Number(naturalLog(self.visit(node.node).value))
