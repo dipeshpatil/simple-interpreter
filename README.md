@@ -2,10 +2,12 @@
 Simple Interpreter is an Interpreter which can calculate Mathematical Expressions based on rules and precedence
 
 ![Ex 1](https://i.ibb.co/RNC8Jt3/Code-Cogs-Eqn.png)
+
 ```LN (((25 * 4) + ((900 * 10 * 2 - 900 * 10) / 10)) LB 10)``` = ```1.0986122886681096```
 
 ![Ex 2](https://i.ibb.co/HgcyQhm/Code-Cogs-Eqn-1.png)
-```((25 * 4) + ((900 * 10 * 2 - 900 * 10) / 10)) LB 10```
+
+```((25 * 4) + ((900 * 10 * 2 - 900 * 10) / 10)) LB 10``` = ```3```
 
 The following expressions can be evaluated using Simple Interpreter currently
 
