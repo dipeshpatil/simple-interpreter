@@ -37,7 +37,23 @@ class Lexer:
 
             elif self.current_char == '/':
                 self.advance()
-                yield Token(TokenType.DIVIDE)
+                if self.current_char == '/':
+                    self.advance()
+                    yield Token(TokenType.INT_DIVIDE)
+                else:
+                    yield Token(TokenType.DIVIDE)
+
+            elif self.current_char == '':
+                self.advance()
+                yield Token(TokenType.INT_DIVIDE)
+
+            elif self.current_char == '%':
+                self.advance()
+                yield Token(TokenType.MOD)
+
+            elif self.current_char == '^':
+                self.advance()
+                yield Token(TokenType.POW)
 
             elif self.current_char == '(':
                 self.advance()

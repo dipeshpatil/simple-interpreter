@@ -25,6 +25,18 @@ class Interpreter:
         except:
             raise Exception("Runtime Math Error")
 
+    def visit_IntDivideNode(self, node):
+        try:
+            return Number(self.visit(node.node_a).value // self.visit(node.node_b).value)
+        except:
+            raise Exception("Runtime Math Error")
+
+    def visit_ModNode(self, node):
+        return Number(self.visit(node.node_a).value % self.visit(node.node_b).value)
+
+    def visit_PowNode(self, node):
+        return Number(self.visit(node.node_a).value ** self.visit(node.node_b).value)
+
     def visit_PlusNode(self, node):
         return self.visit(node.node)
 
