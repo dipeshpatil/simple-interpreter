@@ -46,7 +46,7 @@ The following expressions can be evaluated using Simple Interpreter currently
    - ```2 ** (3 ** 2)``` => ```(2.0 ** (3.0 ** 2.0))``` = ```512.0```
    - Associativity: Right, Since Exponent is Right Associative we will have to use parenthesis for correct evaluation
     
-1. N<sup>th</sup> Root```#``` 
+1. N<sup>th</sup> Root ```#``` 
    - A # B => A<sup>1/B</sup>
    - ```25 # 2 => (25.0 # 2.0) = 5.0```
    - ```256 # 2 # 2``` => ```((256.0 # 2.0) # 2.0)``` = ```4.0```
