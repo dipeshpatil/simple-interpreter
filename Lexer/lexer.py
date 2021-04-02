@@ -47,26 +47,13 @@ class Lexer:
                 else:
                     yield Token(TokenType.DIVIDE)
 
-            elif self.current_char == '':
-                self.advance()
-                yield Token(TokenType.INT_DIVIDE)
-
             elif self.current_char == '%':
                 self.advance()
                 yield Token(TokenType.MOD)
 
             elif self.current_char == '#':
                 self.advance()
-                yield Token(TokenType.SQRT)
-
-            # elif self.current_char == 'N':
-            #     char = self.current_char
-            #     self.advance()
-            #     if self.current_char == "l":
-            #         self.advance()
-            #         yield Token(TokenType.NAT_LOG)
-            #     else:
-            #         raise Exception(f"Illegal Character '{char}'")
+                yield Token(TokenType.NRT)
 
             elif self.current_char == 'L':
                 char = self.current_char
@@ -79,6 +66,14 @@ class Lexer:
                     yield Token(TokenType.NAT_LOG)
                 else:
                     raise Exception(f"Illegal Character '{char}'")
+
+            elif self.current_char == "C":
+                self.advance()
+                if self.current_char == "I":
+                    self.advance()
+                    yield Token(TokenType.COS_INV)
+                else:
+                    yield Token(TokenType.COS)
 
             elif self.current_char == '(':
                 self.advance()

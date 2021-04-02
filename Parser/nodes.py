@@ -112,3 +112,19 @@ class NatLogNode:
 
     def __repr__(self):
         return f"(LN{self.node})"
+
+
+@dataclass
+class CosNode:
+    node: any
+
+    def __repr__(self):
+        return f"(C{self.node})"
+
+
+@dataclass
+class CosInvNode:
+    node: any
+
+    def __repr__(self):
+        return f"(CI{self.node})"

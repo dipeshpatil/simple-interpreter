@@ -53,3 +53,9 @@ class Interpreter:
 
     def visit_NatLogNode(self, node):
         return Number(naturalLog(self.visit(node.node).value))
+
+    def visit_CosNode(self, node):
+        return Number(cosine(self.visit(node.node).value))
+
+    def visit_CosInvNode(self, node):
+        return Number(cosineInv(self.visit(node.node).value))

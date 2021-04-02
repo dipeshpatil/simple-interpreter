@@ -8,14 +8,19 @@ class TokenType(Enum):
     MINUS = 2
     MULTIPLY = 3
     DIVIDE = 4
-    INT_DIVIDE = 5
-    MOD = 6
-    POW = 7
-    SQRT = 8
-    LOGNBASEX = 9
-    NAT_LOG = 10
-    LPAREN = 11
-    RPAREN = 12
+
+    LPAREN = 5
+    RPAREN = 6
+
+    MOD = 7
+    INT_DIVIDE = 8
+    POW = 9
+    NRT = 10
+    LOGNBASEX = 11
+    NAT_LOG = 12
+
+    COS = 13
+    COS_INV = 14
 
 
 @dataclass

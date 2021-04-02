@@ -47,7 +47,7 @@ class Parser:
 
         while self.current_token is not None and self.current_token.type in (
                 TokenType.MULTIPLY, TokenType.DIVIDE, TokenType.MOD, TokenType.POW, TokenType.INT_DIVIDE,
-                TokenType.SQRT, TokenType.LOGNBASEX):
+                TokenType.NRT, TokenType.LOGNBASEX):
             if self.current_token.type == TokenType.MULTIPLY:
                 self.advance()
                 result = MultiplyNode(result, self.factor())
@@ -68,7 +68,7 @@ class Parser:
                 self.advance()
                 result = IntDivideNode(result, self.factor())
 
-            elif self.current_token.type == TokenType.SQRT:
+            elif self.current_token.type == TokenType.NRT:
                 self.advance()
                 result = NRTNode(result, self.factor())
 
@@ -106,5 +106,13 @@ class Parser:
         elif token.type == TokenType.NAT_LOG:
             self.advance()
             return NatLogNode(self.factor())
+
+        elif token.type == TokenType.COS:
+            self.advance()
+            return CosNode(self.factor())
+
+        elif token.type == TokenType.COS_INV:
+            self.advance()
+            return CosInvNode(self.factor())
 
         self.raise_error()
