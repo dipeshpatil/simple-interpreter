@@ -129,8 +129,19 @@ The following expressions can be evaluated using Simple Interpreter currently
    - ```TI 0.577 => (TI0.577)``` => TAN<sup>-1</sup>(0.577) = ```29.984946007397852```
    - ```TI 0.999 => (TI0.999)``` => TAN<sup>-1</sup>(0.999) = ```44.97133778152393```
    - Associativity: Right
-  
-Yet To Be Implemented
-- COT INV
-- SEC INV
-- COSEC INV
+   
+1. Cot Inv ```TI (1 / V)``` 
+   - ```TI 1 / V``` => TAN<sup>-1</sup>(1 / V)
+   - ```TI 1 / 0.577 => (TI(1 / 0.577))``` => TAN<sup>-1</sup>(1 / 0.577) = ```60.01505399260215```
+   - ```TI 1 / 0.999 => (TI(1 / 0.999))``` => TAN<sup>-1</sup>(1 / 0.999) = ```45.04504504504504```
+   - Associativity: Right
+   
+1. Sec Inv ```CI (1 / V)``` 
+   - ```CI 1 / V``` => COS<sup>-1</sup>(1 / V)
+   - ```CI 1 / 1.1547 => (CI(1 / 1.1547))``` => COS<sup>-1</sup>(1 / 1.1547) = ```29.999953729657733```
+   - Associativity: Right
+   
+1. Cosec Inv ```SI (1 / V)``` 
+   - ```SI 1 / V``` => SIN<sup>-1</sup>(1 / V)
+   - ```SI 1 / 2 => (SI(1 / 2))``` => SIN<sup>-1</sup>(1 / 2) = ```30.000000000000004```
+   - Associativity: Right
