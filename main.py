@@ -4,7 +4,7 @@ from Interpreter.interpreter import Interpreter
 
 while True:
     try:
-        text = input("calc > ")
+        text = input("->> ")
 
         if text == 'exit':
             break
@@ -18,6 +18,7 @@ while True:
         interpreter = Interpreter()
         value = interpreter.visit(tree)
 
-        print(value)
+        print("<<- " + str(value) + "\n")
+
     except Exception as e:
         print(e)

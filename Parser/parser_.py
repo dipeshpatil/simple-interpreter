@@ -26,6 +26,7 @@ class Parser:
         if self.current_token is not None:
             self.raise_error()
 
+        print(result)
         return result
 
     def expr(self):
@@ -114,5 +115,21 @@ class Parser:
         elif token.type == TokenType.COS_INV:
             self.advance()
             return CosInvNode(self.factor())
+
+        elif token.type == TokenType.SIN:
+            self.advance()
+            return SinNode(self.factor())
+
+        elif token.type == TokenType.SIN_INV:
+            self.advance()
+            return SinInvNode(self.factor())
+
+        elif token.type == TokenType.TAN:
+            self.advance()
+            return TanNode(self.factor())
+
+        elif token.type == TokenType.TAN_INV:
+            self.advance()
+            return TanInvNode(self.factor())
 
         self.raise_error()

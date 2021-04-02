@@ -59,3 +59,15 @@ class Interpreter:
 
     def visit_CosInvNode(self, node):
         return Number(cosineInv(self.visit(node.node).value))
+
+    def visit_SinNode(self, node):
+        return Number(sine(self.visit(node.node).value))
+
+    def visit_SinInvNode(self, node):
+        return Number(sineInv(self.visit(node.node).value))
+
+    def visit_TanNode(self, node):
+        return Number(tan(self.visit(node.node).value))
+
+    def visit_TanInvNode(self, node):
+        return Number(tanInv(self.visit(node.node).value))

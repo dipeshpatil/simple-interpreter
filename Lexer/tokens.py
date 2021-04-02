@@ -19,8 +19,14 @@ class TokenType(Enum):
     LOGNBASEX = 11
     NAT_LOG = 12
 
-    COS = 13
-    COS_INV = 14
+    SIN = 13
+    SIN_INV = 14
+
+    COS = 15
+    COS_INV = 16
+
+    TAN = 17
+    TAN_INV = 18
 
 
 @dataclass

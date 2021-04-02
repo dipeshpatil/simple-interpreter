@@ -67,6 +67,14 @@ class Lexer:
                 else:
                     raise Exception(f"Illegal Character '{char}'")
 
+            elif self.current_char == "S":
+                self.advance()
+                if self.current_char == "I":
+                    self.advance()
+                    yield Token(TokenType.SIN_INV)
+                else:
+                    yield Token(TokenType.SIN)
+
             elif self.current_char == "C":
                 self.advance()
                 if self.current_char == "I":
@@ -74,6 +82,14 @@ class Lexer:
                     yield Token(TokenType.COS_INV)
                 else:
                     yield Token(TokenType.COS)
+
+            elif self.current_char == "T":
+                self.advance()
+                if self.current_char == "I":
+                    self.advance()
+                    yield Token(TokenType.TAN_INV)
+                else:
+                    yield Token(TokenType.TAN)
 
             elif self.current_char == '(':
                 self.advance()

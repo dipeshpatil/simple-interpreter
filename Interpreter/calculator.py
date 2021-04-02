@@ -17,3 +17,19 @@ def cosine(deg):
 
 def cosineInv(rad):
     return math.acos(rad) * 180 / PI
+
+
+def sine(deg):
+    return math.sin(deg * PI / 180)
+
+
+def sineInv(rad):
+    return math.asin(rad) * 180 / PI
+
+
+def tan(deg):
+    return math.tan(deg * PI / 180)
+
+
+def tanInv(rad):
+    return math.atan(rad) * 180 / PI

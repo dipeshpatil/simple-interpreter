@@ -128,3 +128,35 @@ class CosInvNode:
 
     def __repr__(self):
         return f"(CI{self.node})"
+
+
+@dataclass
+class SinNode:
+    node: any
+
+    def __repr__(self):
+        return f"(S{self.node})"
+
+
+@dataclass
+class SinInvNode:
+    node: any
+
+    def __repr__(self):
+        return f"(SI{self.node})"
+
+
+@dataclass
+class TanNode:
+    node: any
+
+    def __repr__(self):
+        return f"(T{self.node})"
+
+
+@dataclass
+class TanInvNode:
+    node: any
+
+    def __repr__(self):
+        return f"(TI{self.node})"
