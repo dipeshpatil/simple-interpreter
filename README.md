@@ -1,4 +1,4 @@
-# Simple Interpreter v 1.0
+# simple-interpreter v 1.0
 Simple Interpreter is an Interpreter which can calculate Mathematical Expressions based on rules and precedence
 
 ![Ex 1](https://i.ibb.co/RNC8Jt3/Code-Cogs-Eqn.png)
